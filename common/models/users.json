@@ -1,0 +1,1461 @@
+{
+  "name": "users",
+  "plural": "users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "mongodb": {
+      "collection": "users",
+      "allowExtendedOperators": true
+    },
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "userType": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "userMail": {
+      "type": "string",
+      "required": true
+    },
+    "additionalEmail": {
+      "type": "string"
+    },
+    "usrePhone": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "benefitArrangement": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "annualIncome": {
+      "type": "number"
+    },
+    "country": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "relationshipStatus": {
+      "type": "string"
+    },
+    "relationshipLifestyle": {
+      "type": "string"
+    },
+    "smokingStatus": {
+      "type": "string"
+    },
+    "alcoholicStatus": {
+      "type": "string"
+    },
+    "childrenStatus": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array"
+    },
+    "graduationStatus": {
+      "type": "string"
+    },
+    "desiredRelationship": {
+      "type": "string"
+    },
+    "aboutMe": {
+      "type": "string"
+    },
+    "isMailVerified": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "isProfileVerified": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "bodySpecs": {
+      "type": "string"
+    },
+    "bodyFitness": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "netWorth": {
+      "type": "string"
+    },
+    "interestedIn": {
+      "type": "string"
+    },
+    "passcode": {
+      "type": "number"
+    },
+    "height": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "updatedAt": {
+      "type": "date"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "notificationCount": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "messageCount": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "lastActiveAt": {
+      "type": "date"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "reportedUsers": {
+      "type": [
+        {
+          "id": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "isReporter": {
+            "type": "boolean"
+          }
+        }
+      ]
+    },
+    "giftTokens": {
+      "type": [
+        {
+          "userId": {
+            "type": "string"
+          },
+          "isSender": {
+            "type": "boolean"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "createdAt": {
+            "type": "date"
+          }
+        }
+      ]
+    },
+    "verification": {
+      "type": [
+        {
+          "verificationType": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "date": {
+            "type": "date"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      ]
+    },
+    "subscriptions": {
+      "type": [
+        {
+          "plan": {
+            "type": "string"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          }
+        }
+      ]
+    },
+    "benefitArrangements": {
+      "type": [
+        {
+          "id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "isSender": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "date"
+          },
+          "cancelledBy": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "date"
+          },
+          "status": {
+            "type": "string"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "arrangementLog": {
+            "type": [
+              {
+                "amount": {
+                  "type": "number"
+                },
+                "startedDate": {
+                  "type": "date"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "photos": {
+      "type": [
+        {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "urlLink": {
+            "type": "string",
+            "required": true
+          },
+          "privateUrlLink": {
+            "type": "string"
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "require": true
+          },
+          "createdAt": {
+            "type": "date",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+          }
+        }
+      ]
+    },
+    "videos": {
+      "type": [
+        {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "urlLink": {
+            "type": "string",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+          },
+          "createdAt": {
+            "type": "date",
+            "required": true
+          }
+        }
+      ],
+      "privatePhotoAccessibleUsers": {
+        "type": [
+          {
+            "id": {
+              "type": "string",
+              "required": true
+            }
+          },
+          {
+            "userId": {
+              "type": "string",
+              "required": true
+            },
+            "status": {
+              "type": "string",
+              "required": true
+            },
+            "isRepliedType": {
+              "type": "boolean",
+              "required": true
+            }
+          }
+        ]
+      }
+    },
+    "credentials": {
+      "type": [
+        {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "password": {
+            "type": "string",
+            "required": true
+          },
+          "createdAt": {
+            "type": "date",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true
+          }
+        }
+      ]
+    },
+    "notifications": {
+      "type": [
+        {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "userName": {
+            "type": "string",
+            "required": true
+          },
+          "userId": {
+            "type": "string",
+            "required": true
+          },
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "body": {
+            "type": "string",
+            "required": true
+          },
+          "avatar": {
+            "type": "string",
+            "required": true
+          },
+          "isSeen": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+          },
+          "createdAt": {
+            "type": "date",
+            "required": true
+          },
+          "navigation": {
+            "type": {
+              "requestId": {
+                "type": "string",
+                "required": true
+              },
+              "notificationType": {
+                "type": "string",
+                "required": true
+              },
+              "refferenceId": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "requestForDates": {
+      "type": [
+        {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "when": {
+            "type": "date",
+            "required": true
+          },
+          "where": {
+            "type": "string",
+            "required": true
+          },
+          "tokens": {
+            "type": "number",
+            "required": true
+          },
+          "isSender": {
+            "type": "string",
+            "required": true
+          },
+          "userId": {
+            "type": "string",
+            "required": true
+          },
+          "status": {
+            "type": "string",
+            "required": true,
+            "default": "Pending"
+          },
+          "isRepliedType": {
+            "type": "boolean",
+            "required": true
+          },
+          "createdAt": {
+            "type": "date",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true
+          },
+          "negotiations": [
+            {
+              "tokens": {
+                "type": "number",
+                "required": true
+              },
+              "previousTokens": {
+                "type": "number",
+                "required": true
+              },
+              "createdAt": {
+                "type": "date",
+                "required": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "wallet": {
+      "type": {
+        "walletAddress": {
+          "type": "string",
+          "required": true
+        },
+        "privateKey": {
+          "type": "string",
+          "required": true
+        },
+        "transactionLog": {
+          "type": [
+            {
+              "voucharType": {
+                "type": "string",
+                "required": true
+              },
+              "transactionType": {
+                "type": "string",
+                "required": true
+              },
+              "walletAddress": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number",
+                "required": true
+              },
+              "tokens": {
+                "type": "number",
+                "required": true
+              },
+              "userId": {
+                "type": "string",
+                "required": true
+              },
+              "narration": {
+                "type": "string",
+                "required": true
+              },
+              "createdAt": {
+                "type": "date",
+                "required": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    "appPreference": {
+      "type": {
+        "messageNotificatin": {
+          "type": "boolean",
+          "required": true
+        },
+        "dateNotification": {
+          "type": "boolean",
+          "required": true
+        },
+        "arrangementNotification": {
+          "type": "boolean",
+          "required": true
+        },
+        "walletNotification": {
+          "type": "boolean",
+          "required": true
+        },
+        "photoNotification": {
+          "type": "boolean",
+          "required": true
+        }
+      }
+    },
+    "paymentMethods": {
+      "type": [
+        {
+          "id": {
+            "type": "string",
+            "required": true
+          },
+          "isPrimary": {
+            "type": "boolean",
+            "required": true
+          },
+          "cardNo": {
+            "type": "number",
+            "required": true
+          },
+          "cardTypeName": {
+            "type": "string",
+            "required": true
+          },
+          "cardTypeValue": {
+            "type": "string",
+            "required": true
+          },
+          "cardHolderName": {
+            "type": "string",
+            "required": true
+          },
+          "expiryDate": {
+            "type": "date",
+            "required": true
+          },
+          "securityCode": {
+            "type": "number",
+            "required": true
+          },
+          "isTransactionDeclined": {
+            "type": "boolean",
+            "required": true,
+            "default": false
+          },
+          "createdAt": {
+            "type": "date",
+            "required": true
+          },
+          "updatedAt": {
+            "type": "date",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true
+          }
+        }
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "isUserExist": {
+      "accepts": [
+        {
+          "arg": "identity",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To check weither the username/userphone/usermail exist or not. Format: { \"identity\": \"username/userphone/usermail\" }",
+      "http": {
+        "path": "/identity/exist/",
+        "verb": "post"
+      }
+    },
+    "createUser": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To create a user. Format (example): {\"userMail\":\"xxx@xxxx.com\", \"password\":\"xx#xx\"}",
+      "http": {
+        "path": "/",
+        "verb": "post"
+      }
+    },
+    "updateRecord": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To update user. Format (example): {\"property1\":\"property1\", \"property2\":\"property2\"}",
+      "http": {
+        "path": "/",
+        "verb": "put"
+      }
+    },
+    "getUsers": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To get all users list",
+      "http": {
+        "path": "/",
+        "verb": "get"
+      }
+    },
+    "getUserById": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "id",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "array",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Get User By Id. Format (example) : { \"id\": \"xxxxxxxxxxxx\" }",
+      "http": {
+        "path": "/:id",
+        "verb": "get"
+      }
+    },
+    "getLimitedUsers": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "page",
+          "type": "number"
+        },
+        {
+          "arg": "limit",
+          "type": "number"
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "object",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To get users with page & limit. Format (example): { \"page\": 1, \"limit\": 5 }",
+      "http": {
+        "path": "/filter/:page/:limit",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "verifyEmail": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To verify an Email",
+      "http": {
+        "path": "/email/verification/",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "emailVerificationCodeVerify": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "code",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To validate email verification code. Format (example): { \"code\": xxxx }",
+      "http": {
+        "path": "/email/code-verify",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "getRequestById": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "For getting requests. Format (example): { \"notificationId\": \"xxxxx\"}",
+      "http": {
+        "path": "/notification/fetchdata",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "getSubcriptionObj": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To get subscription plan.",
+      "http": {
+        "path": "/subscribe",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "userSubscription": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "For subscribing. Format (example): { \"subscribedPlan\": \"xxxx\" }",
+      "http": {
+        "path": "/subscribe",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "getLimitedNotifications": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "page",
+          "type": "number"
+        },
+        {
+          "arg": "limit",
+          "type": "number"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "For getting notification. Format (example): { \"limit\": 20, \"page\": 1 }",
+      "http": {
+        "path": "/notification/:page/:limit",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "deleteSubscription": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "For deleting a subscription.",
+      "http": {
+        "path": "/subscription",
+        "verb": "delete",
+        "status": 200
+      }
+    },
+    "passcodeValidation": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Passcode validation. Format (Example: {\"passcode\": xxxx})",
+      "http": {
+        "path": "/passcode-verify",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "deleteRecord": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Deactiveate an account",
+      "http": {
+        "path": "/account/deactivate",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "sendGiftTokens": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Gift an amount of token. Format (example): \"tokens\": 1000, \"receiverId\": \"xxxxxx\"",
+      "http": {
+        "path": "/gift-tokens",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "reportUser": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Report a user. Format (example): \"userId\": \"xxxxxxx\"",
+      "http": {
+        "path": "/report",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "getSearchedUsers": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "value",
+          "type": "string"
+        },
+        {
+          "arg": "page",
+          "type": "number"
+        },{
+          "arg": "limit",
+          "type": "number"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "search a user",
+      "http": {
+        "path": "/:value/:page/:limit",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "profileCompleteness": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Check either profile is complete or not",
+      "http": {
+        "path": "/profile/completeness",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "getPasscode": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+        
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Get Passcode",
+      "http": {
+        "path": "/passcode",
+        "verb": "get",
+        "status": 200
+      }
+    },
+
+
+    "promoToken": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "promoToken",
+      "http": {
+        "path": "/promoToken",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "TopUpToken": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "TopUpToken",
+      "http": {
+        "path": "/TopUpToken",
+        "verb": "post",
+        "status": 200
+      }
+    },
+
+    "changePasscode": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Change Passcode",
+      "http": {
+        "path": "/passcode/reset",
+        "verb": "post",
+        "status": 200
+      }
+    }
+  }
+}

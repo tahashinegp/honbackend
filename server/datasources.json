@@ -1,0 +1,10 @@
+{
+  "localuploads": {
+    "name": "localuploads",
+    "connector": "loopback-component-storage",
+    "provider": "amazon",
+    "maxFileSize":  "10485760000",
+    "key": "ym77VF40GrABM3WNRTWlfbXaKSfywxsxIHKaGFW9",
+    "keyId": "AKIAJZAFDWNEYJEHS7CQ"
+  }
+}

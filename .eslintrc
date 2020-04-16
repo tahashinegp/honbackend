@@ -1,0 +1,8 @@
+{
+  "extends": "loopback",
+  "rules": {
+    "comma-dangle": "off",
+    "semi": ["error", "always"],
+    "quotes":[2, "backtick", "single", "double"]
+  }
+}

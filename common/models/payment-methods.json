@@ -1,0 +1,344 @@
+{
+    "name": "payment-methods",
+    "plural": "payment-methods",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "cardNumberValidate": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "cardNumber",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Card Number Validate. Format (example): { \"cardNo\": \" 2154586585885\" }",
+            "http": {
+              "path": "/validate/:cardNumber",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "paymentMethod": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Add Payment Method. Format (example): { \"cardNo\": \" xxxxxx\", \"securityCode\": \"xxx\", \"cardHolderName\": \"xxx\", \"expiryDate\": \"date\" }",
+            "http": {
+              "path": "/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "getPaymentMethods": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Get Payment Methods.",
+            "http": {
+              "path": "/",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "deletePaymentMethod": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Delete Payment Method.",
+            "http": {
+              "path": "/:id",
+              "verb": "delete",
+              "status": 200
+            }
+          },
+          "updatePaymentMethod": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "update Payment Method.",
+            "http": {
+              "path": "/:id",
+              "verb": "put",
+              "status": 200
+            }
+          },
+          "resetPrimaryPaymentMethod": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "reset primary Payment Method.",
+            "http": {
+              "path": "/set-primary/:id",
+              "verb": "put",
+              "status": 200
+            }
+          },
+          "cardSecurityCodeValidate": {
+            "accepts": [
+              {
+                "arg": "cardNumber",
+                "type": "string"
+              },
+              {
+                "arg": "securityCode",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To check if card number is valid or not. Format (example): \"cardNo\": \"xxx\",\"securityCode\": \"xxx\"",
+            "http": {
+              "path": "/validate-code/:cardNumber/:securityCode",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "getPaymentMethodById": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get payment method by Id",
+            "http": {
+              "path": "/:id",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "getNonce": {
+            "accepts": [
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get client token",
+            "http": {
+              "path": "/token",
+              "verb": "get",
+              "status": 200
+            }
+          }
+    }
+}

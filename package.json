@@ -1,0 +1,61 @@
+{
+  "name": "HoneyGramBackend",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "engines": {
+    "node": ">=5"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint && nsp check",
+    "test": "mocha test/**/*.js"
+  },
+  "dependencies": {
+    "@sentry/node": "^5.1.0",
+    "aws-sdk": "^2.371.0",
+    "axios": "^0.18.0",
+    "braintree": "^2.15.0",
+    "card-validator": "^6.0.0",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "cryptr": "^4.0.2",
+    "dotenv": "^6.1.0",
+    "express-fileupload": "^0.4.0",
+    "firebase-admin": "^6.0.0",
+    "helmet": "^3.10.0",
+    "jimp": "^0.3.10",
+    "jsonwebtoken": "^8.3.0",
+    "loopback": "^3.19.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.0.0",
+    "loopback-component-storage": "^3.4.0",
+    "loopback-connector-mongodb": "^3.9.2",
+    "loopback-storage-service": "^1.0.4",
+    "loopback-swagger": "^5.5.0",
+    "node-datetime": "^2.0.6",
+    "nodemon": "^1.18.2",
+    "password-rules": "0.0.3",
+    "paypal-rest-sdk": "^1.8.1",
+    "react-native-braintree-xplat": "^4.0.0",
+    "serve-favicon": "^2.0.1",
+    "socket.io": "^2.1.1",
+    "strong-error-handler": "^2.3.2",
+    "superagent": "^4.0.0-beta.5",
+    "supertest": "^3.3.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0",
+    "@types/mocha": "^5.2.0",
+    "mocha": "^5.2.0",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "HoneyGramBackend"
+}

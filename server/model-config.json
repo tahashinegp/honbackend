@@ -1,0 +1,68 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "users": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "authentication": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "upload": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "wallet": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "benefit-arrangements": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "payment-methods": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "date-requests": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "app-preference": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "images": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "password": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "container": {
+    "dataSource": "localuploads",
+    "public": true
+  },
+  "conversations": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "configuration": {
+    "dataSource": "mongo",
+    "public": true
+  }
+}

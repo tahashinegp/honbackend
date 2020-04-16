@@ -1,0 +1,255 @@
+{
+    "name": "benefit-arrangements",
+    "plural": "benefit-arrangements",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "setBenefitArrangement": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To set benefit arrangement. { \"receiverId\": \"xxxx\", \"tokens\":\"100\" }",
+            "http": {
+              "path": "/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "getBenefitArrangements": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "page",
+                "type": "number"
+              },
+              {
+                "arg": "limit",
+                "type": "number"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get benefit arrangement",
+            "http": {
+              "path": "/:page/:limit",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "updateBenefitArrangement": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To update benefit arrangement. Format (example): { \"tokens\": 100 }",
+            "http": {
+              "path": "/:id",
+              "verb": "put",
+              "status": 200
+            }
+          },
+          "deleteBenefitArrangement": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To delete Benefit Arrangement",
+            "http": {
+              "path": "/:id",
+              "verb": "delete",
+              "status": 200
+            }
+          },
+          "getBenefitArrangementById": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get Benefit Arrangement by Id",
+            "http": {
+              "path": "/:id",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "respondToBenefitArrangement": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Benefit Arrangement Response. For Example: {\"id\": \"{benefit arrangement id}\",\"isAccepted\": true}",
+            "http": {
+              "path": "/response",
+              "verb": "post",
+              "status": 200
+            }
+          }
+    }
+}

@@ -1,0 +1,374 @@
+{
+    "name": "images",
+    "plural": "images",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "filteredPublicPhotos": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "userId",
+                "type": "string"
+              },
+              {
+                "arg": "page",
+                "type": "number"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "object",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get public photo with page & limit. Format (example): { \"page\": 1, \"limit\": 5 }",
+            "http": {
+              "path": "/public/:userId/:page",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "filteredPrivatePhotos": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "userId",
+                "type": "string"
+              },
+              {
+                "arg": "page",
+                "type": "number"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "object",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get private photo with page & limit. Format (example): { \"page\": 1, \"limit\": 5 }",
+            "http": {
+              "path": "/private/:userId/:page",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "privatePhotoAccessRequest": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For getting access of a private photo. Format (example): { \"userId\": \"xxxx\" }",
+            "http": {
+              "path": "/private/request",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "privatePhotoAccess": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For giving access of private image. Format (example): { \"userId\": \"xxxx\", \"isAccept\": true }",
+            "http": {
+              "path": "/private/access",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "getPublicPrivatePhotos": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "page",
+                "type": "number"
+              },
+              {
+                "arg": "limit",
+                "type": "number"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "get public and private photo",
+            "http": {
+              "path": "/:page/:limit",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "deleteImages": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "delete photos. Format (Example): \"photoArray\": [\"xxxx\", \"xxxx\", ...]",
+            "http": {
+              "path": "/bulk-delete",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "deleteOneImage": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "delete a photo",
+            "http": {
+              "path": "/:id",
+              "verb": "delete",
+              "status": 200
+            }
+          },
+          "changeProfileImage": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Change profile photo",
+            "http": {
+              "path": "/profile/:id",
+              "verb": "put",
+              "status": 200
+            }
+          },
+
+          "changePhotoType": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Change private to public and vice varsa.",
+            "http": {
+              "path": "/toggle/:id",
+              "verb": "put",
+              "status": 200
+            }
+          }
+    }
+}

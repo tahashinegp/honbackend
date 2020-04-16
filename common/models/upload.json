@@ -1,0 +1,157 @@
+{
+    "name": "upload",
+    "plural": "upload",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "fileUpload": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "isPrivate",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Bulk upload of images. Format (example): send images form postman.",
+            "http": {
+              "path": "/images/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "profilePictureUpload": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For uploading profile picture. Format (example): send image form postman.",
+            "http": {
+              "path": "/picture/profile/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "videoUpload": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For uploading video. Format (example): send video form postman.",
+            "http": {
+              "path": "/video",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "profilePictureUploadBaseSixtyFour": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For uploading base64 image. Format (example): base64image.",
+            "http": {
+              "path": "/image/base64",
+              "verb": "post",
+              "status": 200
+            }
+          }
+    }
+}

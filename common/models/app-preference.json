@@ -1,0 +1,85 @@
+{
+    "name": "app-preference",
+    "plural": "app-preference",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "updateAppPreference": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Set application preference. Format (example): { \"preferenceType\": \" messageNotification\", \"isActive\": true }",
+            "http": {
+              "path": "/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "getAppPreference": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get application preference.",
+            "http": {
+              "path": "/",
+              "verb": "get",
+              "status": 200
+            }
+          }
+    }
+  }

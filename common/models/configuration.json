@@ -1,0 +1,315 @@
+{
+  "name": "configuration",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "termsAndConditions": {
+      "type": "string",
+      "required": true
+    },
+    "versions": {
+      "type": [{
+        "versionType": {
+          "type": "string",
+          "required":true
+        },
+        "version": {
+          "type": "string",
+          "required":true
+        },
+        "content": {
+          "type":"string",
+          "required":true
+        },
+        "modifiedBy": {
+          "type": "string",
+          "required":true
+        },
+        "createdAt": {
+          "type": "date"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        }
+      }],
+      "required": false
+    },
+    "contactInfo": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "getAllInfo": {
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Get Terms & Conditions object",
+      "http": {
+        "path": "/",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "getTerms": {
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "",
+      "http": {
+        "path": "/terms",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "getContactInfo": {
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "",
+      "http": {
+        "path": "/contact",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "getVersion": {
+      "accepts": [{
+        "arg": "type",
+        "type": "string"
+      }
+    ],
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "",
+      "http": {
+        "path": "/version/:type",
+        "verb": "get",
+        "status": 200
+      }
+    },
+    "updateVersions": {
+      "accepts": [{
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "create a configuration table. Format (example): \"type\": \"xxxxxxx\", \"version\":\"xx\",\"content\":\"xx\"",
+      "http": {
+        "path": "/version",
+        "verb": "put",
+        "status": 200
+      }
+    },
+    "updateTerms": {
+      "accepts": [{
+        "arg": "reqBody",
+        "type": "object",
+        "http": {
+          "source": "body"
+        }
+      }],
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "create a configuration table. Format (example): \"terms\": \"xxxxxxx\"",
+      "http": {
+        "path": "/terms",
+        "verb": "put",
+        "status": 200
+      }
+    },
+    "updateContact": {
+      "accepts": [{
+        "arg": "reqBody",
+        "type": "object",
+        "http": {
+          "source": "body"
+        }
+      }],
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "create a configuration table. Format (example): \"contactInfo\": \"xxxxxxx\"",
+      "http": {
+        "path": "/contact",
+        "verb": "put",
+        "status": 200
+      }
+    },
+    "createTermsAndCondition": {
+      "accepts": [{
+        "arg": "reqBody",
+        "type": "object",
+        "http": {
+          "source": "body"
+        }
+      }],
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Format (example): { \"terms\": \"xxxxxxx\", \"contact\":\"xxxx\",\"mobileVersion\":\"xx\",\"webVersion\":\"xx\", \"mobileContent\": \"xx\", \"webContent\":\"xx\"}",
+      "http": {
+        "path": "/",
+        "verb": "post",
+        "status": 200
+      }
+    },
+    "iplocation": {
+      "accepts": [{
+        "arg": "lat",
+        "type": "string"
+      },{
+        "arg": "lon",
+        "type": "string"
+      }
+    ],
+      "returns": [{
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "Format (example): {}",
+      "http": {
+        "path": "/location/:lat/:lon",
+        "verb": "get",
+        "status": 200
+      }
+    }
+  }
+}

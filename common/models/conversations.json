@@ -1,0 +1,57 @@
+{
+  "name": "conversations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "members": {
+      "type": [
+        {
+          "userId": {
+            "type": "string",
+            "required": true
+          }
+        }
+      ]
+    },
+    "messages": {
+      "type": [
+        {
+          "messageId": {
+            "type": "string",
+            "required": true
+          },
+          "message": {
+            "type": "string",
+            "required": true
+          },
+          "sentAt": {
+            "type": "date",
+            "required": true
+          },
+          "seenAt": {
+            "type": "date"
+          },
+          "senderId": {
+            "type": "string",
+            "required": true
+          },
+          "isDeleted": {
+            "type": "boolean",
+            "required": true
+          }
+        }
+      ]
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

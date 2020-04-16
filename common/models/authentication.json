@@ -1,0 +1,90 @@
+{
+  "name": "authentication",
+  "plural": "authentication",
+  "base": "PersistedModel",
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "authentication": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To authorize a user. Format (example): {\"userName\":\"xxxx\", \"password\":\"xx#xx\"}",
+      "http": {
+        "path": "/",
+        "verb": "post"
+      }
+    },
+    "refreshToken": {
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "reqBody",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Data",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "IsExecute",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "arg": "Message",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "description": "To authorize a user. Format (example): {\"refreshToken\":\"xxxx\"}",
+      "http": {
+        "path": "/token/refresh",
+        "verb": "post"
+      }
+    }
+  }
+}

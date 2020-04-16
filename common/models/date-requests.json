@@ -1,0 +1,303 @@
+{
+    "name": "date-requests",
+    "plural": "date-requests",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+        "requestForDate": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For requesting a date. Format (example): { \"sendTo\": \"xxx\", \"when\": \"10 Aug 2018 08:00\", \"where\" :\"New york\", \"tokens\": 20 }",
+            "http": {
+              "path": "/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "getDateRequestList": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "page",
+                "type": "number"
+              },
+              {
+                "arg": "limit",
+                "type": "number"
+              },
+              {
+                "arg": "event",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For getting request for date. Format (example): { \"limit\": 20, \"page\": 1 }",
+            "http": {
+              "path": "/:page/:limit",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "deleteDateRequest": {
+            "accepts": [
+              {
+                "arg": "id",
+                "type":"string",
+                "required": true
+              },
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Delete date request",
+            "http": {
+              "path": "/:id",
+              "verb": "delete",
+              "status": 200
+            }
+          },
+          "doBetter": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "notificationId",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For getting request. Format (example): { \"notificationId\": \"xxxx\" } ",
+            "http": {
+              "path": "/negotiation/:notificationId",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "requestUpdate": {
+            "accepts": [
+              {
+                "arg": "id",
+                "type": "string",
+                "required": true
+              },
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For updating request. Format: (exmaple): { \"requestType\": \"DateRequestConfirm\" }",
+            "http": {
+              "path": "/update/:id",
+              "verb": "put",
+              "status": 200
+            }
+          },
+          "getDateRequestById": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Get date request by id.",
+            "http": {
+              "path": "/:id",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "updateDateRequestById": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "id",
+                "type": "string"
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Update date request by id.",
+            "http": {
+              "path": "/:id",
+              "verb": "put",
+              "status": 200
+            }
+          }
+    }
+}

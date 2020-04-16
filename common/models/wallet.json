@@ -1,0 +1,168 @@
+{
+    "name": "wallet",
+    "plural": "wallet",
+    "base": "PersistedModel",
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": {
+          "walletHistory": {
+            "accepts": [
+              {
+                "arg": "page",
+                "type": "number"
+              },
+              {
+                "arg": "limit",
+                "type": "number"
+              },
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "For getting wallet history.",
+            "http": {
+              "path": "/transaction/:page/:limit",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "getWalletBalance": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "object",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "To get wallet balance.",
+            "http": {
+              "path": "/balance/",
+              "verb": "get",
+              "status": 200
+            }
+          },
+          "topUpWalletBalance": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Top up wallet balance. Format (Example): { \"tokens\": 100, \"amount\": 100, \"clientNonce\":\"xxxx\"}",
+            "http": {
+              "path": "/top-up/",
+              "verb": "post",
+              "status": 200
+            }
+          },
+          "withdraWalletBalance": {
+            "accepts": [
+              {
+                "arg": "req",
+                "type": "object",
+                "http": {
+                  "source": "req"
+                }
+              },
+              {
+                "arg": "reqBody",
+                "type": "object",
+                "http": {
+                  "source": "body"
+                }
+              }
+            ],
+            "returns": [
+              {
+                "arg": "Data",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "IsExecute",
+                "type": "boolean",
+                "required": true
+              },
+              {
+                "arg": "Message",
+                "type": "string",
+                "required": true
+              }
+            ],
+            "description": "Withdraw wallet balance. Format (Example: {\"tokens\": 100, \"walletAddress\":\"xxxxxxxxxx\"})",
+            "http": {
+              "path": "/withdraw",
+              "verb": "post",
+              "status": 200
+            }
+          }
+    }
+}
