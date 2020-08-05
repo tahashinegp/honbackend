@@ -21,7 +21,7 @@
     "cors": "^2.5.2",
     "cryptr": "^4.0.2",
     "dotenv": "^6.1.0",
-    "express-fileupload": "^0.4.0",
+    "express-fileupload": "^1.1.9",
     "firebase-admin": "^6.0.0",
     "helmet": "^3.10.0",
     "jimp": "^0.3.10",
