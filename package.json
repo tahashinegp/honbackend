@@ -39,7 +39,7 @@
     "paypal-rest-sdk": "^1.8.1",
     "react-native-braintree-xplat": "^4.0.0",
     "serve-favicon": "^2.0.1",
-    "socket.io": "^2.1.1",
+    "socket.io": "^2.4.0",
     "strong-error-handler": "^2.3.2",
     "superagent": "^4.0.0-beta.5",
     "supertest": "^3.3.0"
