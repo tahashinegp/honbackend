@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@sentry/node": "^5.1.0",
-    "aws-sdk": "^2.371.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.0",
     "braintree": "^2.15.0",
     "card-validator": "^6.0.0",
